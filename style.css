@@ -40,7 +40,7 @@ body {
     border-radius: 10px;
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(107, 229, 112, 0.4); /* Sombra pode ser ajustada por tema */
-    z-index: 500; /* Acima do conteúdo principal */
+    z-index: 1000; /* Z-index aumentado para garantir visibilidade */
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -64,7 +64,7 @@ body {
     position: fixed;
     top: 1.5rem;
     left: 1.5rem;
-    z-index: 500;
+    z-index: 1000; /* Z-index aumentado para garantir visibilidade */
     display: flex;
     gap: 0.5rem;
     background-color: var(--card-color);
@@ -96,7 +96,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin-top: 5rem; /* Ajustado para acomodar o botão da lista e seletor de tema */
+    margin-top: 7rem; /* Aumentado para garantir espaço abaixo dos botões fixos */
     background: var(--card-color);
     padding: 1.8rem;
     border-radius: 15px;
@@ -448,7 +448,7 @@ button:active {
     }
     .container {
         padding: 1.2rem;
-        margin-top: 4rem;
+        margin-top: 4rem; /* Ajusta para o botão da lista */
     }
     h1 {
         font-size: 1.8em;
