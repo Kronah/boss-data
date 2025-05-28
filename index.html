@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Busca de Mobs - Lineage 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    </head>
+<body>
+    <button id="openListButton" onclick="openSelectedMobsListPopup()">
+        <i class="fas fa-clipboard-list"></i> Minha Lista (<span id="selectedMobCount">0</span>)
+    </button>
+
+    <div class="theme-selector">
+        <button class="theme-button green-theme" onclick="setTheme('green')" title="Tema Verde"></button>
+        <button class="theme-button blue-theme" onclick="setTheme('blue')" title="Tema Azul"></button>
+        <button class="theme-button purple-theme" onclick="setTheme('purple')" title="Tema Roxo"></button>
+    </div>
+
+    <div class="container">
+        <h1>BUSCA DE MOBS</h1>
+        <input type="text" id="searchInput" placeholder="Digite o nome do mob..." />
+        <button onclick="buscarMob()"><i class="fas fa-search"></i> Pesquisar</button>
+        <div id="resultado"></div>
+    </div>
+
+    <div id="toast" style="visibility: hidden;"></div>
+
+    <div class="overlay" id="selectedMobsListOverlay">
+        <div class="popup" id="selectedMobsListPopup">
+            <h2>Minha Lista de Mobs</h2>
+            <div id="selectedMobsContent" class="popup-content">
+                <p class="no-items-message">Nenhum mob na sua lista ainda.</p>
+            </div>
+            <button onclick="closeSelectedMobsListPopup()"><i class="fas fa-times"></i> Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log('Service Worker registrado!', reg))
+          .catch(err => console.warn('Erro ao registrar Service Worker:', err));
+      }
+    </script>
+</body>
+</html>
